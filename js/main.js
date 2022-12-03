@@ -293,6 +293,7 @@ const refreshPosts = async (posts) => {
 
 // 19
 async function selectMenuChangeEventHandler(e) {
+    if (!e) return undefined;
     let userId = e?.target?.value || 1;
     let posts = await getUserPosts(userId);
     let refreshPostsArray = await refreshPosts(posts);
